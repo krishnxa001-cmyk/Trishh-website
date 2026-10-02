@@ -279,11 +279,83 @@
     position: relative;
     z-index: 2;
 }
+        /* OPENING SCREEN */
+
+#openingScreen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #c471ed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+}
+
+.opening-content {
+    color: white;
+    animation: openingFade 1.5s ease;
+}
+
+.opening-heart {
+    font-size: 90px;
+    animation: openingHeartbeat 1.3s infinite;
+}
+
+#openingScreen h1 {
+    font-size: 55px;
+    margin: 15px 0;
+    color: white;
+}
+
+#openingScreen p {
+    font-size: 20px;
+    color: white;
+}
+
+#openingScreen button {
+    background: white;
+    color: #e91e63;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+@keyframes openingHeartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+        @keyframes openingFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
 </head>
 
 
 <body>
+
+<div id="openingScreen">
+    <div class="opening-content">
+        <div class="opening-heart">❤️</div>
+        <h1>For Trish</h1>
+        <p>A little something made just for you...</p>
+        <button onclick="startJourney()">Open My Heart ❤️</button>
+    </div>
+</div>
 
 
 <div class="container">
@@ -545,6 +617,9 @@
             .display = "block";
 
     }
+    function startJourney() {
+    document.getElementById("openingScreen").style.display = "none";
+}
 
 </script>
 
