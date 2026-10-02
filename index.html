@@ -397,7 +397,7 @@
             the world feel.
         </p>
 
-
+<button onclick="nextSlide()">Next ❤️</button>
         <!-- PHOTO -->
 
         <!-- PHOTO -->
@@ -633,6 +633,16 @@
             .style
             .display = "block";
 
+    }
+        function nextSlide() {
+
+        const cards = document.querySelectorAll(".container .card");
+
+        cards.forEach(card => {
+            card.style.display = "none";
+        });
+
+        cards[1].style.display = "block";
     }
     function startJourney() {
     document.getElementById("openingScreen").style.display = "none";
