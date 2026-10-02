@@ -640,16 +640,22 @@
             .display = "block";
 
     }
-        function nextSlide() {
+       let currentSlide = 0;
 
-        const cards = document.querySelectorAll(".container .card");
+function nextSlide() {
 
-        cards.forEach(card => {
-            card.style.display = "none";
-        });
+    const cards = document.querySelectorAll(".container .card");
 
-        cards[1].style.display = "block";
+    cards[currentSlide].style.display = "none";
+
+    currentSlide++;
+
+    if (currentSlide >= cards.length) {
+        currentSlide = 0;
     }
+
+    cards[currentSlide].style.display = "block";
+}
     function startJourney() {
     document.getElementById("openingScreen").style.display = "none";
 
