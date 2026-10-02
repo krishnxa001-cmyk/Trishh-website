@@ -637,7 +637,13 @@
     function startJourney() {
     document.getElementById("openingScreen").style.display = "none";
 
-    document.querySelector(".card").style.display = "block";
+    const cards = document.querySelectorAll(".container .card");
+
+    cards.forEach(card => {
+        card.style.display = "none";
+    });
+
+    cards[0].style.display = "block";
 }
 
 
