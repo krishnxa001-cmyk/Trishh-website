@@ -384,6 +384,33 @@
 .slide-enter {
     animation: slideEnter 1s ease forwards;
 }
+
+/* CINEMATIC TEXT REVEAL */
+
+.slide-enter h1,
+.slide-enter h2 {
+    animation: textReveal 1s ease 0.3s both;
+}
+
+.slide-enter p {
+    animation: textReveal 1s ease 0.6s both;
+}
+
+.slide-enter button {
+    animation: textReveal 1s ease 0.9s both;
+}
+
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
         /* FINAL SURPRISE ANIMATION */
 
 #surprise {
