@@ -367,6 +367,23 @@
     border-radius: 0;
     display: none;
 }
+        /* SLIDE ENTRANCE ANIMATION */
+
+@keyframes slideEnter {
+    from {
+        opacity: 0;
+        transform: scale(1.08) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.slide-enter {
+    animation: slideEnter 1s ease forwards;
+}
         /* FINAL SURPRISE ANIMATION */
 
 #surprise {
@@ -692,7 +709,13 @@ function nextSlide() {
         currentSlide = 0;
     }
 
-    cards[currentSlide].style.display = "block";
+   cards[currentSlide].style.display = "block";
+
+cards[currentSlide].classList.remove("slide-enter");
+
+void cards[currentSlide].offsetWidth;
+
+cards[currentSlide].classList.add("slide-enter");
 }
     function startJourney() {
     document.getElementById("openingScreen").style.display = "none";
@@ -704,6 +727,8 @@ function nextSlide() {
     });
 
     cards[0].style.display = "block";
+
+cards[0].classList.add("slide-enter");
 }
 
 
